@@ -1,0 +1,28 @@
+<table class="table ">
+    <tr> 
+        <th>Sr No.</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Address</th>
+        <th>Gender</th>
+        <th>Date of birth</th>
+        <th>Course</th>
+        <th>Email</th>
+        <th>View </th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+    <tr *ngFor="let stud of student; let i =index">
+        <th>{{i+1}}</th>
+        <th>{{stud.fname}}</th>
+        <th>{{stud.lname}}</th>
+        <th>{{stud.address }}</th>
+        <th>{{stud.gender}}</th>
+        <th>{{stud.dob}}</th>
+        <th>{{stud.course}}</th>
+        <th>{{stud.emailid}}</th>
+        <th><button  class="btn bg-primary" routerLink="/studentviewdata/{{i}}">View</button></th>
+        <th><button  class="btn bg-success" routerLink="/update/{{i}}">Update</button></th>
+        <th><button  class="btn bg-danger" (click)="deleteitem('{{i}}')">Delete</button></th>
+    </tr>
+</table>
